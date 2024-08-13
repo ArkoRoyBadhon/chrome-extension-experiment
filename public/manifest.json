@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Review Collector",
+    "version": "1.0",
+    "description": "Collect reviews and comments from YouTube.",
+    "permissions": ["activeTab", "scripting", "storage", "contextMenus"],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": {
+        "32": "icon32.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "32": "icon32.png"
+    }
+  }
+  
